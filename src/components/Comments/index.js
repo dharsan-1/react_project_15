@@ -33,6 +33,7 @@ class Comments extends Component {
       date: new Date(),
       name: nameInput,
       comment: commentInput,
+      isLiked: false,
     }
     this.setState(prevState => ({
       commentsContainer: [...prevState.commentsContainer, newContainer],
@@ -44,35 +45,61 @@ class Comments extends Component {
   onPushingComment = () => {
     const {commentsContainer} = this.state
     return commentsContainer.map(eachComment => (
-      <CommentItem key={eachComment.id} containerList={eachComment} />
+      <CommentItem
+        key={eachComment.id}
+        containerList={eachComment}
+        togglingFav={this.togglingFav}
+      />
     ))
   }
 
+  togglingFav = id => {
+    this.setState(prevState => ({
+      commentsContainer: prevState.commentsContainer.map(eachContainer => {
+        if (id === eachContainer.id) {
+          return {...eachContainer, isLiked: !eachContainer.isLiked}
+        }
+        return eachContainer
+      }),
+    }))
+  }
+
   render() {
-    const {nameInput, commentInput} = this.state
+    const {nameInput, commentInput, commentsContainer} = this.state
     return (
       <div className="background">
         <h1 className="heading">comments</h1>
         <p className="para-1">say something about 4.0 technologies</p>
-        <form onSubmit={this.onSubmitFeedback} className="form">
-          <input
-            placeholder="Enter your name"
-            onChange={this.onChangeName}
-            className="nameInput"
-            value={nameInput}
+        <div className="form-img">
+          <form onSubmit={this.onSubmitFeedback} className="form">
+            <input
+              placeholder="Enter your name"
+              onChange={this.onChangeName}
+              className="nameInput"
+              value={nameInput}
+            />
+            <textarea
+              placeholder="Enter your thoughts"
+              value={commentInput}
+              onChange={this.onChangeNote}
+              className="noteInput"
+              rows="6"
+            />
+            <button type="submit" className="onSubmitBtn">
+              add comment
+            </button>
+          </form>
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/comments-app/comments-img.png"
+            alt="comments"
+            className="img"
           />
-          <textarea
-            placeholder="Enter your thoughts"
-            value={commentInput}
-            onChange={this.onChangeNote}
-            className="noteInput"
-            rows="6"
-          />
-          <button type="submit" className="onSubmitBtn">
-            add comment
-          </button>
-        </form>
+        </div>
         <hr className="hr_line" />
+        <div className="count-comment-container">
+          <div className="count">{commentsContainer.length}</div>
+          <h2 className="comments">comments</h2>
+        </div>
         {this.onPushingComment()}
       </div>
     )
