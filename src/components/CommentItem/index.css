@@ -1,0 +1,70 @@
+.amber {
+  background-color: #f59e0b;
+}
+
+.blue {
+  background-color: #0b69ff;
+}
+
+.orange {
+  background-color: #f97316;
+}
+
+.emerald {
+  background-color: #10b981;
+}
+
+.teal {
+  background-color: #14b8a6;
+}
+
+.red {
+  background-color: #b91c1c;
+}
+
+.light-blue {
+  background-color: #0ea5e9;
+}
+
+.wholeContainer {
+  padding: 20px;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.name-container {
+  color: white;
+  background-color: darkblue;
+  border-radius: 25px;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+  padding-top: 7px;
+  margin-top: 25px;
+  margin-right: 20px;
+}
+
+.name {
+  color: black;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.para {
+  color: gray;
+  font-weight: bold;
+  padding-left: 30px;
+  padding-top: 20px;
+}
+.comment {
+  color: black;
+  padding-top: 5px;
+}
+.comments-name-container {
+  display: flex;
+  flex-direction: row;
+}

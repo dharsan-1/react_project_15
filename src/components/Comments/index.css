@@ -1,0 +1,45 @@
+.background {
+  background-size: cover;
+  background-color: white;
+  padding: 20px;
+  margin: 0px;
+}
+.heading {
+  color: black;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+.para-1 {
+  color: black;
+  padding-bottom: 30px;
+}
+
+.nameInput {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 200px;
+  border-width: 1px;
+  border-color: gray;
+}
+.noteInput {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 560px;
+  height: 200px;
+}
+.onSubmitBtn {
+  background-color: lightblue;
+  color: white;
+  border-radius: 10px;
+  border-width: 0px;
+  text-align: center;
+  padding: 10px;
+  width: 160px;
+}
+.hr_line {
+  font-size: bold;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
